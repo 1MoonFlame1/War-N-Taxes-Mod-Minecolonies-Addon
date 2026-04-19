@@ -257,7 +257,7 @@ public class SpyManager {
                 guardCount,
                 colony.getOverallHappiness(),
                 TaxManager.getStoredTaxForColony(colony),
-                colony.getBuildingManager().getBuildings().size(),
+                colony.getServerBuildingManager().getBuildings().size(),
                 WarSystem.isColonyInWar(colony.getID()),
                 colony.getName(),
                 System.currentTimeMillis());

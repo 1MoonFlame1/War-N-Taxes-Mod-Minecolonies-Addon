@@ -119,7 +119,7 @@ public class ColonyDataCollector {
             int guardCount = 0;
             int guardTowerCount = 0;
             
-            for (IBuilding building : colony.getBuildingManager().getBuildings().values()) {
+            for (IBuilding building : colony.getServerBuildingManager().getBuildings().values()) {
                 if (building.getBuildingLevel() > 0 && building.isBuilt()) {
                     buildingCount++;
                     

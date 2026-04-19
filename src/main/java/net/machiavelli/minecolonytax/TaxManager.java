@@ -468,7 +468,7 @@ public class TaxManager {
                                 Math.abs(1.0 - taxPolicyMultiplier) * 100);
                     }
 
-                    for (IBuilding building : colony.getBuildingManager().getBuildings().values()) {
+                    for (IBuilding building : colony.getServerBuildingManager().getBuildings().values()) {
                         if (building.getBuildingLevel() > 0 && building.isBuilt()) {
                             buildingCount++;
                             String buildingType = building.getClass().getName();
@@ -553,7 +553,7 @@ public class TaxManager {
                     }
 
                     // --- Guard Tower Tax Boost Processing ---
-                    for (IBuilding building : colony.getBuildingManager().getBuildings().values()) {
+                    for (IBuilding building : colony.getServerBuildingManager().getBuildings().values()) {
                         if (building.getBuildingLevel() > 0 && building.isBuilt()) {
                             // Count guard towers using the same logic as WarSystem
                             String displayName = building.getBuildingDisplayName();

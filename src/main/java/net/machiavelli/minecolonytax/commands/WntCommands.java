@@ -2219,7 +2219,7 @@ public class WntCommands {
                 java.util.concurrent.atomic.AtomicInteger guardTowersDetected = new java.util.concurrent.atomic.AtomicInteger(
                                 0);
 
-                for (com.minecolonies.api.colony.buildings.IBuilding building : colony.getBuildingManager()
+                for (com.minecolonies.api.colony.buildings.IBuilding building : colony.getServerBuildingManager()
                                 .getBuildings()
                                 .values()) {
                         totalBuildings.incrementAndGet();
@@ -3383,7 +3383,7 @@ public class WntCommands {
 
                         // Count guard towers
                         int guardTowerCount = 0;
-                        for (com.minecolonies.api.colony.buildings.IBuilding building : colony.getBuildingManager()
+                        for (com.minecolonies.api.colony.buildings.IBuilding building : colony.getServerBuildingManager()
                                         .getBuildings()
                                         .values()) {
                                 if (building.getBuildingLevel() > 0 && building.isBuilt()) {
@@ -3426,7 +3426,7 @@ public class WntCommands {
                         int totalMaintenance = 0;
                         int buildingCount = 0;
 
-                        for (com.minecolonies.api.colony.buildings.IBuilding building : colony.getBuildingManager()
+                        for (com.minecolonies.api.colony.buildings.IBuilding building : colony.getServerBuildingManager()
                                         .getBuildings()
                                         .values()) {
                                 if (building.getBuildingLevel() > 0 && building.isBuilt()) {

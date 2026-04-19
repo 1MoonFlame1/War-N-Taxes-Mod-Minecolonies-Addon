@@ -430,7 +430,7 @@ public enum RandomEventType {
      */
     protected static int countBuildingsOfType(IColony colony, String... types) {
         int count = 0;
-        for (IBuilding building : colony.getBuildingManager().getBuildings().values()) {
+        for (IBuilding building : colony.getServerBuildingManager().getBuildings().values()) {
             String buildingType = building.getBuildingType().getRegistryName().getPath();
             for (String type : types) {
                 if (buildingType.contains(type)) {
@@ -451,7 +451,7 @@ public enum RandomEventType {
      */
     protected static int getMaxBuildingLevel(IColony colony, String type) {
         int maxLevel = 0;
-        for (IBuilding building : colony.getBuildingManager().getBuildings().values()) {
+        for (IBuilding building : colony.getServerBuildingManager().getBuildings().values()) {
             String buildingType = building.getBuildingType().getRegistryName().getPath();
             if (buildingType.contains(type)) {
                 maxLevel = Math.max(maxLevel, building.getBuildingLevel());

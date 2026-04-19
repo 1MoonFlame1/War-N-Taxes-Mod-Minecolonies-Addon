@@ -857,7 +857,7 @@ public class WarSystem {
                     int expectedTaxRevenue = 0;
 
                     // Calculate an expected tax based on the attacker's colony revenue potential
-                    for (IBuilding building : winnerColony.getBuildingManager().getBuildings().values()) {
+                    for (IBuilding building : winnerColony.getServerBuildingManager().getBuildings().values()) {
                         String buildingType = building.getBuildingDisplayName();
                         double baseTax = TaxConfig.getBaseTaxForBuilding(buildingType);
                         double upgradeTax = TaxConfig.getUpgradeTaxForBuilding(buildingType)
@@ -869,7 +869,7 @@ public class WarSystem {
                     reparationsAmount = (int) (expectedTaxRevenue * transferPercentage);
 
                     // Ensure minimum reparations amount if any buildings exist
-                    if (reparationsAmount <= 0 && !winnerColony.getBuildingManager().getBuildings().isEmpty()) {
+                    if (reparationsAmount <= 0 && !winnerColony.getServerBuildingManager().getBuildings().isEmpty()) {
                         reparationsAmount = TaxConfig.getDebtLimit() / 10; // A minimum reparation amount
                     }
                 }
@@ -3091,9 +3091,9 @@ public class WarSystem {
      *         invalid
      */
     public static int countGuardTowers(IColony colony) {
-        if (colony == null || colony.getBuildingManager() == null)
+        if (colony == null || colony.getServerBuildingManager() == null)
             return 0;
-        return (int) colony.getBuildingManager().getBuildings().values().stream()
+        return (int) colony.getServerBuildingManager().getBuildings().values().stream()
                 .filter(WarSystem::isGuardTower)
                 .count();
     }

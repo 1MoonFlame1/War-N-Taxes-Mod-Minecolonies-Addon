@@ -199,7 +199,7 @@ public class BuildingRequirementsManager {
             LOGGER.debug("Checking building requirements for colony {}: {} level {}+", 
                         colony.getID(), buildingType, minLevel);
                         
-            for (IBuilding building : colony.getBuildingManager().getBuildings().values()) {
+            for (IBuilding building : colony.getServerBuildingManager().getBuildings().values()) {
                 String actualBuildingType = building.getBuildingType().getRegistryName().getPath().toLowerCase();
                 int buildingLevel = building.getBuildingLevel();
                 

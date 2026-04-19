@@ -69,7 +69,7 @@ public class ColonyEventListener {
             int guardTowerCount = 0;
             int newOrUpgradedBuildingsCount = 0;
 
-            for (IBuilding building : colony.getBuildingManager().getBuildings().values()) {
+            for (IBuilding building : colony.getServerBuildingManager().getBuildings().values()) {
                 int currentLevel = building.getBuildingLevel();
 
                 // Count Guard Towers
