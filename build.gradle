@@ -138,10 +138,10 @@ repositories {
 dependencies {
 
     implementation fg.deobf("curse.maven:minecolonies-245506:7914274")
-    runtimeOnly fg.deobf("curse.maven:blockui-522992:5658253")
-    runtimeOnly fg.deobf("curse.maven:multi-piston-303278:5204918")
-    runtimeOnly fg.deobf("curse.maven:domum-ornamentum-527361:5764067")
-    runtimeOnly fg.deobf("curse.maven:structurize-298744:5676596")
+    runtimeOnly fg.deobf("curse.maven:blockui-522992:7606230")
+    runtimeOnly fg.deobf("curse.maven:multi-piston-303278:7097889")
+    runtimeOnly fg.deobf("curse.maven:domum-ornamentum-527361:7812429")
+    runtimeOnly fg.deobf("curse.maven:structurize-298744:7895334")
     runtimeOnly fg.deobf("curse.maven:jei-238222:5739402")
     implementation fg.deobf("curse.maven:sdm-shop-948942:7395729")
     runtimeOnly fg.deobf("curse.maven:ftb-library-forge-404465:7296748")
@@ -154,7 +154,7 @@ dependencies {
     implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-84-FORGE")
 
 
-    minecraft "net.minecraftforge:forge:1.20.1-47.3.10"
+    minecraft "net.minecraftforge:forge:1.20.1-47.4.16"
 
 
 

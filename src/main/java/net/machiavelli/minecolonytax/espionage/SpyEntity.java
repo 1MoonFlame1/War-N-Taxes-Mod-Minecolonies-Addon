@@ -16,6 +16,8 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Mob;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.DistExecutor;
 
 import java.util.UUID;
 
@@ -112,8 +114,7 @@ public class SpyEntity extends PathfinderMob {
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         if (this.level().isClientSide) {
-            net.minecraft.client.Minecraft.getInstance()
-                    .setScreen(new net.machiavelli.minecolonytax.gui.SpyDialogScreen());
+            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> SpyEntityClientHelper::openSpyScreen);
             return InteractionResult.sidedSuccess(true);
         }
         return InteractionResult.sidedSuccess(false);
